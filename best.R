@@ -8,7 +8,6 @@ best <- function(state, outcome) {
   if(!state %in% myData$State) {
     stop("invalid state")
   }
-
   if(!outcome %in% names(outcomes)) {
     stop("invalid outcome")
   }
@@ -18,5 +17,4 @@ best <- function(state, outcome) {
   mynewData[,outcomes[outcome]] <- as.numeric(mynewData[,outcomes[outcome]]) #Coerce outcome column to numeric
   mynewData <- mynewData[order(mynewData[,outcomes[outcome]],mynewData[,2]),] #Sort by Outcome&Name
   return(mynewData[1,2]) #Select 1st Hospital in column
-  ## rate
 }
